@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,50 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>TaskFlow</h1>
+    <div class="container">
+        <header class="hero">
+            <h1>TaskFlow</h1>
+            <p>Organize suas tarefas de forma simples!</p>
+        </header>
+
+        <form method="get" class="form">
+            <div class="form_container">
+                <h2 class="form_nv">Nova tarefa:</h2>
+                <div class="form_add_tarefa">
+                    <input type="text" name="tarefa" id="add_tarefa" placeholder="Digite uma tarefa..."
+                        class="input_text">
+                    <button type="submit" class="btn">Adicionar</button>
+                </div>
+
+                <div class="form_list">
+                    <h3>Minhas tarefas:</h3>
+                    <div class="list_tarefas">
+                        <!-- Exemplo tarefas -->
+                        <article class="cards">
+                            <input type="checkbox" id="tarefa">
+                            <label for="tarefa">Tarefa qualquer</label>
+                        </article>
+
+                        <article class="cards">
+                            <input type="checkbox" id="tarefa">
+                            <label for="tarefa">Tarefa qualquer</label>
+                        </article>
+
+                        <article class="cards">
+                            <input type="checkbox" id="tarefa">
+                            <label for="tarefa">Tarefa qualquer</label>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

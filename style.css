@@ -1,9 +1,161 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Variáveis */
+:root {
+    --primary--Color: #44749D;
+    --blue--Color: #c6d4e1;
+    --bege--Color: #ebe7e0;
+    --brown--Color: #bdb8ad;
+    --htext--Color: #3d3d3d;
+}
+
+/* Corpo geral*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Layout  */
+.container {
+    background-color: var(--bege--Color);
+    width: 100%;
+    max-width: 1000px;
+    margin: 1rem;
+    border: 5px solid var(--primary--Color);
+    border-radius: .3rem;
+    box-shadow: -.3rem .3rem 1rem var(--primary--Color);
+}
+
+/* Header */
+.hero {
+    background-color: var(--primary--Color);
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    letter-spacing: .1rem;
+}
+
+.hero h1 {
+    font-size:clamp(2rem, 5vw, 5rem);
+    border-bottom: 2px dashed rgb(255, 255, 255);
+    width: max-content;
+    margin: auto;
+
+}
+
+.hero p {
+    padding-top: 1rem;
+    font-size: clamp(.7rem, 1.5vw, 1.5rem);
+}
+
+/* Form-Input-Submit */
+
+.form_nv {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: var(--htext--Color);
+    margin: .5rem 0 0 1rem;
+}
+
+.form_container {
+    width: 100%;
+    border: none;
+}
+
+.form_add_tarefa {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+.input_text {
+    width: 100%;
+    font-size: 1rem;
+    border: 3px solid var(--blue--Color);
+    padding: .5rem;
+    border-radius: .2rem;
+    transition: .5s;
+}
+
+.input_text:focus {
+    outline: 2px solid #252c60;
+    padding-left: 1rem;
+    transition: .5s;
+}
+
+.btn {
+    background-color: var(--primary--Color);
+    color: #FFFFFF;
+    font-size: 1rem;
+    border-radius: .5rem;
+    border: none;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #305473;
+    transition: .5s;
+}
+
+/* Form-List */
+.form_list {
+    display: flex;
+    justify-items: center;
+    gap: 2rem;
+    border-top: 1px dashed #ccc;
+}
+
+.form_list h3 {
+    background-color: var(--blue--Color);
+    color: var(--htext--Color);
+    font-size: clamp(.5rem, 3vw, 2rem);
+    padding: 2rem;
+    border-right: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    text-align: center;
+    max-width: 50%;
+    width: 100%;
+    height: max-content;
+}
+
+.list_tarefas {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+.cards {
+    margin-top: .5rem;
+    font-size: clamp(.8rem, 1.5vw, 1.5rem);
+}
+
+/* Responsividade */
+
+@media (max-width:768px) {
+
+    .form_add_tarefa {
+        flex-direction: column;
+    }
+
+    .input_text {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
 }
