@@ -194,7 +194,7 @@ body {
     flex-direction: column;
     padding: 1rem 2rem 1rem 0 ;
     overflow-y: auto;
-    height: clamp(5rem, 20vw, 20rem );
+    height: 50vh;
 }
 
 .cards {
