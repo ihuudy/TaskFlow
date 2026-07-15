@@ -14,27 +14,32 @@ function novaTarefa(event) {
         return;
     }
 
-    criarCard(tarefa);
     tarefas.push(tarefa);
+    criarCard(tarefa);
 }
 
 function criarCard(tarefa) {
 
-        const article = document.createElement("article");
-        const label = document.createElement("label")
-        const checkbox = document.createElement("input")
+    const article = document.createElement("article");
+    const label = document.createElement("label")
+    const checkbox = document.createElement("input")
 
-        article.classList.add("cards");
-        checkbox.type = "checkbox";
-        label.textContent = tarefa;
+    article.classList.add("cards");
+    checkbox.type = "checkbox";
+    label.textContent = tarefa;
 
-        article.appendChild(checkbox);
-        article.appendChild(label);
+    article.appendChild(checkbox);
+    article.appendChild(label);
 
-        taskList.appendChild(article);
+    taskList.appendChild(article);
 
-        addTask.value = "";
-        addTask.focus();
-        console.log(tarefas);
+    addTask.value = "";
+    addTask.focus();
+    console.log(tarefas);
+}
 
+function renderizaTarefas() {
+    tarefas.forEach(function (tarefa) {
+        criarCard(tarefa);
+    });
 }
