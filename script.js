@@ -1,16 +1,25 @@
-const tarefas = [];
+let tarefas = [];
 
 const buttonAdd = document.querySelector(".btn_add");
 const addTask = document.querySelector("#add_tarefa");
 const taskList = document.querySelector(".list_tarefas");
+const buttonDelete = document.querySelector(".btn_delete");
 
 buttonAdd.addEventListener("click", novaTarefa);
+buttonDelete.addEventListener("click", excluirTarefas);
 
 function novaTarefa(event) {
     event.preventDefault();
     const tarefa = addTask.value.trim();
     if (!tarefa) {
-        console.log("Digite uma tarefa!");
+        alert("Digite uma tarefa!");
+        addTask.focus();
+        return;
+    } 
+    
+    if (tarefa.length > 30) {
+        alert(`Limite de 30 caracteres excedido!\nVocê digitou ${tarefa.length} caracteres.`);
+        addTask.focus();
         return;
     }
 
@@ -22,7 +31,7 @@ function novaTarefa(event) {
 
     tarefas.push(novaTarefa);
 
-    criarCard(novaTarefa);
+    renderizaTarefas();
 
     addTask.value = "";
     addTask.focus();
@@ -34,10 +43,11 @@ function criarCard(tarefa) {
     const label = document.createElement("label")
     const checkbox = document.createElement("input")
 
-    article.database.id = tarefa.id;
+    article.dataset.id = tarefa.id;
     article.classList.add("cards");
     checkbox.type = "checkbox";
-    checkbox.database.id = tarefa.id;
+    checkbox.checked = tarefa.concluida;
+    checkbox.dataset.id = tarefa.id;
     label.textContent = tarefa.texto;
 
     article.appendChild(checkbox);
@@ -53,4 +63,21 @@ function renderizaTarefas() {
     tarefas.forEach(function (tarefa) {
         criarCard(tarefa);
     });
+}
+
+function excluirTarefas(event) {
+    event.preventDefault();
+
+    const checkboxesMarcados = document.querySelectorAll("input:checked");
+
+    checkboxesMarcados.forEach(function(checkbox) {
+        const id = Number(checkbox.dataset.id);
+
+        tarefas = tarefas.filter(function (tarefa) {
+            return tarefa.id !== id;
+        });
+    });
+
+    renderizaTarefas();
+    
 }

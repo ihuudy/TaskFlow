@@ -117,20 +117,8 @@ body {
     transition: .3s;
 }
 
-.btn_editar {
-    padding: 1rem;
-    border-radius: 0 .5rem .5rem 0;
-    background-color: rgb(221, 136, 17);
-}
-
-.btn_editar:hover {
-    background-color: rgb(125, 73, 0);
-    transition: .3s;
-}
-
 .btn_delete {
     padding: 1rem;
-    border-radius: 0 .5rem .5rem 0;
     background-color: red;
 }
 
@@ -143,7 +131,6 @@ body {
 .form_list {
     display: flex;
     justify-items: center;
-    gap: 2rem;
     border-top: 1px dashed #ccc;
 }
 
@@ -157,7 +144,6 @@ body {
 .link_git {
     display: flex;
     align-items: center;
-    gap: .5rem;
     background-color: var(--bege--Color);
 }
 
@@ -167,12 +153,16 @@ body {
 
 .link_git a {
     text-align: center;
-    background-color: #252c60;
-    border-radius: .5rem;
+    background-color: #5a1d59;
+    border-radius: .5rem 0 0 .5rem;
     color: white;
     flex: 1;
     text-decoration: none;
     padding: 1rem;
+}
+
+.link_git a:hover {
+    background-color: #451544;
 }
  
 .form_btns h3 {
@@ -180,7 +170,6 @@ body {
     color: white;
     font-size: clamp(.5rem, 3vw, 2rem);
     padding: 2rem;
-    border-radius: 0 .5rem .5rem 0;
     text-align: center;
     max-width: 100%;
     width: 100%;
@@ -190,8 +179,10 @@ body {
 .list_tarefas {
     display: flex;
     align-items: center;
+    background-color: white;
     flex: 1;
     flex-direction: column;
+    border-left:  1px dashed #ccc;
     padding: 1rem 2rem 1rem 0 ;
     overflow-y: auto;
     height: 50vh;
@@ -204,8 +195,8 @@ body {
     margin-bottom: .1rem;
     color: white;
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: #434661;
+    border-radius: .3rem;
+    background-color: #3d5b57;
     font-size: clamp(.8rem, 1.5vw, 1.5rem);
 }
 
