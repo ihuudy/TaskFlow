@@ -14,8 +14,18 @@ function novaTarefa(event) {
         return;
     }
 
-    tarefas.push(tarefa);
-    criarCard(tarefa);
+    const novaTarefa = {
+        id: Date.now(),
+        texto: tarefa,
+        concluida: false
+    };
+
+    tarefas.push(novaTarefa);
+
+    criarCard(novaTarefa);
+
+    addTask.value = "";
+    addTask.focus();
 }
 
 function criarCard(tarefa) {
@@ -24,21 +34,22 @@ function criarCard(tarefa) {
     const label = document.createElement("label")
     const checkbox = document.createElement("input")
 
+    article.database.id = tarefa.id;
     article.classList.add("cards");
     checkbox.type = "checkbox";
-    label.textContent = tarefa;
+    checkbox.database.id = tarefa.id;
+    label.textContent = tarefa.texto;
 
     article.appendChild(checkbox);
     article.appendChild(label);
 
     taskList.appendChild(article);
-
-    addTask.value = "";
-    addTask.focus();
-    console.log(tarefas);
 }
 
 function renderizaTarefas() {
+
+    taskList.innerHTML = "";
+
     tarefas.forEach(function (tarefa) {
         criarCard(tarefa);
     });
